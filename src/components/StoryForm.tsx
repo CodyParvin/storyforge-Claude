@@ -151,19 +151,19 @@ const StoryForm = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Create Your Story</h1>
-        <p className="text-gray-600">Fill out the details below to generate your AI-powered story outline</p>
+    <div className="max-w-4xl mx-auto p-4 sm:p-6 space-y-6 sm:space-y-8">
+      <div className="text-center mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">Create Your Story</h1>
+        <p className="text-gray-600 dark:text-gray-300">Fill out the details below to generate your AI-powered story outline</p>
       </div>
 
-      <form className="space-y-8">
+      <form className="space-y-6 sm:space-y-8">
         {/* Story Basics Section */}
-        <section className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 border-b border-gray-200 pb-2">
+        <section className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-600 pb-2">
             Story Basics
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div>
               <Label htmlFor="title">Story Title *</Label>
               <Input
@@ -172,12 +172,13 @@ const StoryForm = () => {
                 onChange={(e) => handleInputChange('title', e.target.value)}
                 placeholder="Enter your story title"
                 required
+                className="w-full"
               />
             </div>
             <div>
               <Label htmlFor="genre">Genre *</Label>
               <Select value={formData.genre} onValueChange={(value) => handleInputChange('genre', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a genre" />
                 </SelectTrigger>
                 <SelectContent>
@@ -194,7 +195,7 @@ const StoryForm = () => {
             <div>
               <Label htmlFor="tone">Tone</Label>
               <Select value={formData.tone} onValueChange={(value) => handleInputChange('tone', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select tone" />
                 </SelectTrigger>
                 <SelectContent>
@@ -210,7 +211,7 @@ const StoryForm = () => {
             <div>
               <Label htmlFor="length">Length</Label>
               <Select value={formData.length} onValueChange={(value) => handleInputChange('length', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select length" />
                 </SelectTrigger>
                 <SelectContent>
@@ -224,11 +225,11 @@ const StoryForm = () => {
         </section>
 
         {/* Story Setting Section */}
-        <section className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 border-b border-gray-200 pb-2">
+        <section className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-600 pb-2">
             Story Setting
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div>
               <Label htmlFor="worldName">World or Realm Name</Label>
               <Input
@@ -236,12 +237,13 @@ const StoryForm = () => {
                 value={formData.worldName}
                 onChange={(e) => handleInputChange('worldName', e.target.value)}
                 placeholder="Enter world name"
+                className="w-full"
               />
             </div>
             <div>
               <Label htmlFor="timePeriod">Time Period</Label>
               <Select value={formData.timePeriod} onValueChange={(value) => handleInputChange('timePeriod', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select time period" />
                 </SelectTrigger>
                 <SelectContent>
@@ -256,7 +258,7 @@ const StoryForm = () => {
             <div>
               <Label htmlFor="techLevel">Technology Level</Label>
               <Select value={formData.techLevel} onValueChange={(value) => handleInputChange('techLevel', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select tech level" />
                 </SelectTrigger>
                 <SelectContent>
@@ -271,7 +273,7 @@ const StoryForm = () => {
             <div>
               <Label htmlFor="magicLevel">Magic Level</Label>
               <Select value={formData.magicLevel} onValueChange={(value) => handleInputChange('magicLevel', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select magic level" />
                 </SelectTrigger>
                 <SelectContent>
@@ -287,12 +289,12 @@ const StoryForm = () => {
         </section>
 
         {/* Main Character Section */}
-        <section className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 border-b border-gray-200 pb-2">
+        <section className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-600 pb-2">
             Main Character
           </h2>
           <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="mainName">Character Name</Label>
                 <Input
@@ -300,12 +302,13 @@ const StoryForm = () => {
                   value={formData.mainName}
                   onChange={(e) => handleInputChange('mainName', e.target.value)}
                   placeholder="Enter character name"
+                  className="w-full"
                 />
               </div>
               <div>
                 <Label htmlFor="race">Race</Label>
                 <Select value={formData.race} onValueChange={(value) => handleInputChange('race', value)}>
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select race" />
                   </SelectTrigger>
                   <SelectContent>
@@ -325,6 +328,7 @@ const StoryForm = () => {
                 value={formData.role}
                 onChange={(e) => handleInputChange('role', e.target.value)}
                 placeholder="e.g. warrior, hacker, priest"
+                className="w-full"
               />
             </div>
             <div>
@@ -335,6 +339,7 @@ const StoryForm = () => {
                 onChange={(e) => handleInputChange('personality', e.target.value)}
                 placeholder="Describe their personality in 1–2 sentences"
                 rows={3}
+                className="w-full resize-none"
               />
             </div>
             <div>
@@ -345,18 +350,19 @@ const StoryForm = () => {
                 onChange={(e) => handleInputChange('abilities', e.target.value)}
                 placeholder="Describe special skills, powers, or tools"
                 rows={3}
+                className="w-full resize-none"
               />
             </div>
           </div>
         </section>
 
         {/* Antagonist Section */}
-        <section className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 border-b border-gray-200 pb-2">
+        <section className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-600 pb-2">
             Antagonist
           </h2>
           <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="antagonistName">Name</Label>
                 <Input
@@ -364,12 +370,13 @@ const StoryForm = () => {
                   value={formData.antagonistName}
                   onChange={(e) => handleInputChange('antagonistName', e.target.value)}
                   placeholder="Enter antagonist name"
+                  className="w-full"
                 />
               </div>
               <div>
                 <Label htmlFor="type">Type</Label>
                 <Select value={formData.type} onValueChange={(value) => handleInputChange('type', value)}>
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -391,12 +398,13 @@ const StoryForm = () => {
                 onChange={(e) => handleInputChange('motivation', e.target.value)}
                 placeholder="What drives them?"
                 rows={3}
+                className="w-full resize-none"
               />
             </div>
             <div>
               <Label htmlFor="threatLevel">Threat Level</Label>
               <Select value={formData.threatLevel} onValueChange={(value) => handleInputChange('threatLevel', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select threat level" />
                 </SelectTrigger>
                 <SelectContent>
@@ -411,9 +419,9 @@ const StoryForm = () => {
         </section>
 
         {/* Supporting Characters Section */}
-        <section className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold text-gray-900 border-b border-gray-200 pb-2">
+        <section className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 space-y-2 sm:space-y-0">
+            <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-600 pb-2">
               Supporting Characters
             </h2>
             <Button
@@ -422,6 +430,7 @@ const StoryForm = () => {
               disabled={formData.supportingCharacters.length >= 3}
               variant="outline"
               size="sm"
+              className="w-full sm:w-auto"
             >
               <Plus className="h-4 w-4 mr-2" />
               Add Character
@@ -429,9 +438,9 @@ const StoryForm = () => {
           </div>
           <div className="space-y-4">
             {formData.supportingCharacters.map((character, index) => (
-              <div key={index} className="border border-gray-100 rounded-lg p-4 bg-gray-50">
+              <div key={index} className="border border-gray-100 dark:border-gray-600 rounded-lg p-4 bg-gray-50 dark:bg-gray-700/50">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="font-medium text-gray-900">Character {index + 1}</h3>
+                  <h3 className="font-medium text-gray-900 dark:text-white">Character {index + 1}</h3>
                   <Button
                     type="button"
                     onClick={() => removeSupportingCharacter(index)}
@@ -449,6 +458,7 @@ const StoryForm = () => {
                       value={character.name}
                       onChange={(e) => updateSupportingCharacter(index, 'name', e.target.value)}
                       placeholder="Character name"
+                      className="w-full"
                     />
                   </div>
                   <div>
@@ -459,27 +469,28 @@ const StoryForm = () => {
                       onChange={(e) => updateSupportingCharacter(index, 'traits', e.target.value)}
                       placeholder="Brief description of personality or role"
                       rows={2}
+                      className="w-full resize-none"
                     />
                   </div>
                 </div>
               </div>
             ))}
             {formData.supportingCharacters.length === 0 && (
-              <p className="text-gray-500 text-center py-4">No supporting characters added yet</p>
+              <p className="text-gray-500 dark:text-gray-400 text-center py-4">No supporting characters added yet</p>
             )}
           </div>
         </section>
 
         {/* Narrative Style Section */}
-        <section className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 border-b border-gray-200 pb-2">
+        <section className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-600 pb-2">
             Narrative Style
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div>
               <Label htmlFor="pov">Point of View</Label>
               <Select value={formData.pov} onValueChange={(value) => handleInputChange('pov', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select POV" />
                 </SelectTrigger>
                 <SelectContent>
@@ -492,7 +503,7 @@ const StoryForm = () => {
             <div>
               <Label htmlFor="narrativeStyle">Narrative Style</Label>
               <Select value={formData.narrativeStyle} onValueChange={(value) => handleInputChange('narrativeStyle', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select style" />
                 </SelectTrigger>
                 <SelectContent>
@@ -508,15 +519,15 @@ const StoryForm = () => {
         </section>
 
         {/* Plot Elements Section */}
-        <section className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 border-b border-gray-200 pb-2">
+        <section className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-600 pb-2">
             Plot Elements
           </h2>
           <div className="space-y-4">
             <div>
               <Label htmlFor="conflictType">Conflict Type</Label>
               <Select value={formData.conflictType} onValueChange={(value) => handleInputChange('conflictType', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select conflict type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -530,7 +541,7 @@ const StoryForm = () => {
             </div>
             <div>
               <Label>Themes</Label>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-2">
                 {availableThemes.map((theme) => (
                   <div key={theme} className="flex items-center space-x-2">
                     <Checkbox
@@ -551,21 +562,22 @@ const StoryForm = () => {
                 onChange={(e) => handleInputChange('twist', e.target.value)}
                 placeholder="Describe any desired plot twist or secret reveal"
                 rows={3}
+                className="w-full resize-none"
               />
             </div>
           </div>
         </section>
 
         {/* Ending Preferences Section */}
-        <section className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 border-b border-gray-200 pb-2">
+        <section className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 border-b border-gray-200 dark:border-gray-600 pb-2">
             Story Ending Preferences
           </h2>
           <div className="space-y-4">
             <div>
               <Label htmlFor="endingType">Ending Type</Label>
               <Select value={formData.endingType} onValueChange={(value) => handleInputChange('endingType', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select ending type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -590,15 +602,15 @@ const StoryForm = () => {
         </section>
 
         {/* AI Model Selector Section */}
-        <section className="bg-indigo-50 rounded-lg p-6 border border-indigo-200">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4 border-b border-indigo-200 pb-2">
+        <section className="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4 sm:p-6 border border-indigo-200 dark:border-indigo-800">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-4 border-b border-indigo-200 dark:border-indigo-700 pb-2">
             Review & Generate
           </h2>
           <div className="space-y-4">
             <div>
               <Label htmlFor="selectedModel">AI Model to Use</Label>
               <Select value={formData.selectedModel} onValueChange={(value) => handleInputChange('selectedModel', value)}>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select AI model" />
                 </SelectTrigger>
                 <SelectContent>
@@ -614,11 +626,11 @@ const StoryForm = () => {
                 type="button"
                 onClick={handleGenerateOutline}
                 size="lg"
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 text-lg font-semibold"
+                className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold"
               >
                 Generate Outline
               </Button>
-              <p className="text-sm text-gray-600 mt-2">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
                 Click to generate your AI-powered story outline
               </p>
             </div>
