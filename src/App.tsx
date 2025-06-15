@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { StoryProvider } from "./contexts/StoryContext";
+import { DarkModeProvider } from "./contexts/DarkModeContext";
 import './styles/globals.css';
 
 const queryClient = new QueryClient();
@@ -14,15 +15,17 @@ const queryClient = new QueryClient();
 const App = () => (
   <ErrorBoundary>
     <QueryClientProvider client={queryClient}>
-      <StoryProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <AppRoutes />
-          </BrowserRouter>
-        </TooltipProvider>
-      </StoryProvider>
+      <DarkModeProvider>
+        <StoryProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <AppRoutes />
+            </BrowserRouter>
+          </TooltipProvider>
+        </StoryProvider>
+      </DarkModeProvider>
     </QueryClientProvider>
   </ErrorBoundary>
 );
