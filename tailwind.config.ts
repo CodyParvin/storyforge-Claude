@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,6 +65,19 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// AI StoryForge custom colors
+				'indigo': {
+					50: '#eef2ff',
+					500: '#6366f1',
+					600: '#4f46e5',
+					700: '#4338ca',
+				},
+				'slate': {
+					700: '#334155',
+				},
+				'amber': {
+					400: '#fbbf24',
 				}
 			},
 			borderRadius: {

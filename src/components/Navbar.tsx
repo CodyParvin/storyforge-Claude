@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Home, PenTool, Settings, User } from 'lucide-react';
+import { BookOpen, Home, PenTool, FileText, Edit, Download, Settings, User } from 'lucide-react';
 
 const Navbar = () => {
   const location = useLocation();
@@ -9,7 +9,9 @@ const Navbar = () => {
   const navItems = [
     { path: '/', icon: Home, label: 'Home' },
     { path: '/create', icon: PenTool, label: 'Create' },
-    { path: '/stories', icon: BookOpen, label: 'Stories' },
+    { path: '/outline', icon: FileText, label: 'Outline' },
+    { path: '/chapters', icon: Edit, label: 'Chapters' },
+    { path: '/export', icon: Download, label: 'Export' },
     { path: '/profile', icon: User, label: 'Profile' },
     { path: '/settings', icon: Settings, label: 'Settings' },
   ];
