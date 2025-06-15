@@ -59,17 +59,35 @@ Story Context:
     prompt += `\n\nPrevious Chapter Context: "${previousChapter.title}" - ${previousChapter.summary}`;
   }
 
-  prompt += `\n\nWrite a substantial chapter (2500-4000 words) that fully develops this part of the story. The chapter should include:
+  prompt += `\n\nWrite an extensive, fully-developed chapter (5000-8000 words) that creates a complete reading experience. The chapter MUST include:
 
-1. Rich, immersive scene-setting and world-building details
-2. Meaningful character development and internal thoughts
-3. Engaging dialogue that reveals personality and advances the plot  
-4. Detailed action sequences and emotional moments
-5. Sensory descriptions that bring the world to life
-6. Multiple scenes or story beats within the chapter
-7. A satisfying chapter arc with clear beginning, middle, and end
+**STRUCTURAL REQUIREMENTS:**
+1. Multiple distinct scenes (3-5 scenes minimum)
+2. Rich dialogue throughout - characters should speak naturally and frequently
+3. Varied formatting with section breaks, scene transitions, and pacing changes
+4. Clear chapter arc with setup, development, climax, and resolution
 
-Use descriptive, engaging prose that matches the ${formData.tone || 'epic'} tone. Include enough detail to make readers feel fully immersed in the story world. Develop the characters' relationships, motivations, and growth throughout the chapter.`;
+**DIALOGUE AND CHARACTER INTERACTION:**
+- Include substantial dialogue between characters (at least 30% of the chapter)
+- Use dialogue to reveal character personalities, motivations, and relationships
+- Include both conversation and internal monologue
+- Show character dynamics through their speaking patterns and word choices
+- Use dialogue tags and action beats to enhance the conversation flow
+
+**NARRATIVE DEPTH:**
+- Detailed world-building and atmospheric descriptions
+- Character development through actions, thoughts, and reactions
+- Multiple plot threads that advance the overall story
+- Emotional depth and character growth moments
+- Sensory details that immerse readers in the world
+
+**FORMATTING AND PACING:**
+- Use scene breaks (###) to separate major scenes
+- Include both fast-paced action and slower character moments
+- Vary sentence length and paragraph structure for rhythm
+- Include moments of tension, relief, and emotional resonance
+
+Write in an engaging, ${formData.tone || 'epic'} style that matches the ${formData.genre || 'fantasy'} genre. Make readers feel completely immersed in the story world and deeply connected to the characters through their words and actions.`;
 
   return prompt;
 };
