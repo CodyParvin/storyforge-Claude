@@ -59,7 +59,17 @@ Story Context:
     prompt += `\n\nPrevious Chapter Context: "${previousChapter.title}" - ${previousChapter.summary}`;
   }
 
-  prompt += `\n\nWrite a full chapter (800-1500 words) that advances the plot naturally from the outline. Include dialogue, action, and character development. Use descriptive language that matches the ${formData.tone || 'epic'} tone.`;
+  prompt += `\n\nWrite a substantial chapter (2500-4000 words) that fully develops this part of the story. The chapter should include:
+
+1. Rich, immersive scene-setting and world-building details
+2. Meaningful character development and internal thoughts
+3. Engaging dialogue that reveals personality and advances the plot  
+4. Detailed action sequences and emotional moments
+5. Sensory descriptions that bring the world to life
+6. Multiple scenes or story beats within the chapter
+7. A satisfying chapter arc with clear beginning, middle, and end
+
+Use descriptive, engaging prose that matches the ${formData.tone || 'epic'} tone. Include enough detail to make readers feel fully immersed in the story world. Develop the characters' relationships, motivations, and growth throughout the chapter.`;
 
   return prompt;
 };
