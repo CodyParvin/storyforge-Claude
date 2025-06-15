@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Layout from '../components/Layout';
 import ChapterStepper from '../components/ChapterStepper';
+import ModelInfoCard from '../components/ModelInfoCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -223,6 +224,16 @@ const ChapterPage = () => {
               Chapter {currentChapterIndex + 1} of {outline.length}
             </p>
           </div>
+
+          {/* Model Info Card */}
+          {formData.selectedModel && (
+            <div className="mb-6">
+              <ModelInfoCard 
+                modelName={formData.selectedModel} 
+                className="max-w-md mx-auto"
+              />
+            </div>
+          )}
         </div>
 
         {/* Chapter Stepper */}

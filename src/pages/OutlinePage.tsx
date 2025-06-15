@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Layout from '../components/Layout';
+import ModelInfoCard from '../components/ModelInfoCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
@@ -225,6 +225,16 @@ const OutlinePage = () => {
             </p>
           </div>
         </div>
+
+        {/* Model Info Card */}
+        {formData?.selectedModel && (
+          <div className="mb-8">
+            <ModelInfoCard 
+              modelName={formData.selectedModel} 
+              className="max-w-md mx-auto"
+            />
+          </div>
+        )}
 
         {!hasGenerated && (
           <div className="text-center mb-12">

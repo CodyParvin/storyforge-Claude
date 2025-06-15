@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
+import ModelInfoCard from '../components/ModelInfoCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -126,6 +127,16 @@ const ExportPage = () => {
             </Badge>
           </div>
         </div>
+
+        {/* Model Info Card */}
+        {storyData.metadata.selectedModel && (
+          <div className="mb-8">
+            <ModelInfoCard 
+              modelName={storyData.metadata.selectedModel} 
+              className="max-w-md mx-auto"
+            />
+          </div>
+        )}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Export Options - Left Column */}
