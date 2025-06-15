@@ -43,17 +43,17 @@ const ModelInfoCard = ({ modelName, className = '' }: ModelInfoCardProps) => {
   const Icon = modelInfo.icon;
 
   return (
-    <Card className={`border border-gray-200 dark:border-gray-700 ${className}`}>
+    <Card className={`border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:scale-105 animate-fade-in ${className}`}>
       <CardContent className="p-4">
         <div className="flex items-start space-x-3">
           <div className="flex-shrink-0">
-            <Icon className="h-5 w-5 text-indigo-600 dark:text-indigo-400 mt-0.5" />
+            <Icon className="h-5 w-5 text-indigo-600 dark:text-indigo-400 mt-0.5 transition-colors duration-200 hover:text-indigo-700 dark:hover:text-indigo-300" />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+            <p className="text-sm font-medium text-gray-900 dark:text-gray-100 transition-colors duration-200">
               Generated with {modelName}
             </p>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 leading-relaxed transition-colors duration-200">
               {modelInfo.description}
             </p>
           </div>
