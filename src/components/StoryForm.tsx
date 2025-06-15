@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -62,6 +62,8 @@ interface StoryFormData {
 }
 
 const StoryForm = () => {
+  const navigate = useNavigate();
+  
   const [formData, setFormData] = useState<StoryFormData>({
     title: '',
     genre: '',
@@ -134,7 +136,13 @@ const StoryForm = () => {
 
   const handleGenerateOutline = () => {
     console.log('Generating outline with data:', formData);
-    // TODO: Implement outline generation logic
+    
+    // Navigate to outline page with form data
+    navigate('/outline', { 
+      state: { 
+        formData 
+      } 
+    });
   };
 
   const availableThemes = [
